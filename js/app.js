@@ -224,6 +224,31 @@
       }
     });
 
+    // Rank Dropdown Menu
+    const btnRankMenu = document.getElementById('btn-rank-menu');
+    const rankDropdown = document.getElementById('rank-dropdown');
+    
+    if (btnRankMenu && rankDropdown) {
+      btnRankMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+        rankDropdown.hidden = !rankDropdown.hidden;
+      });
+      
+      document.addEventListener('click', (e) => {
+        if (!rankDropdown.contains(e.target)) {
+          rankDropdown.hidden = true;
+        }
+      });
+      
+      const rankDropdownBtns = rankDropdown.querySelectorAll('.export-option');
+      rankDropdownBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          rankDropdown.hidden = true;
+        });
+      });
+    }
+
+    // Compare Game
     // Compare Game
     if (btnCompare) {
       btnCompare.addEventListener('click', () => {
