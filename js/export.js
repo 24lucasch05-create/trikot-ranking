@@ -121,14 +121,7 @@ const Export = (() => {
     doc.setTextColor(20, 20, 20);
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(10);
-
-    // Medal prefix for top 3
-    let prefix = '';
-    if (rank === 1) prefix = '🥇 ';
-    else if (rank === 2) prefix = '🥈 ';
-    else if (rank === 3) prefix = '🥉 ';
-
-    doc.text(prefix + teamName, x + w / 2, infoY, { align: 'center', maxWidth: w - 8 });
+    doc.text(teamName, x + w / 2, infoY, { align: 'center', maxWidth: w - 8 });
 
     // Kit type
     doc.setTextColor(130, 130, 130);
