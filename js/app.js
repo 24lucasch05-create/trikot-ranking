@@ -373,7 +373,8 @@
     init,
     showToast,
     switchCategory,
-    renderJerseyCards
+    renderJerseyCards,
+    getCurrentCategory: () => currentCategory
   };
 
   // --- Boot ---
